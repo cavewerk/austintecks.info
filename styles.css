@@ -1,0 +1,110 @@
+/* austintecks.info — shared styles */
+
+:root {
+  --bg: #000;
+  --text: #edeced;
+  --muted: #9a9a9a;
+  --accent: #ad856a;
+  --max: 880px;
+  --gutter: clamp(20px, 6vw, 64px);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover, a:focus-visible { color: var(--accent); }
+
+main {
+  max-width: var(--max);
+  padding: 48px var(--gutter) 80px;
+}
+
+/* logo */
+.logo { display: inline-block; }
+.logo img { display: block; width: 100px; height: auto; transition: transform .3s ease; }
+.logo:hover img { transform: rotate(-6deg); }
+
+/* home index */
+.index { margin-top: 32px; }
+.index section + section { margin-top: 24px; }
+.index h2 {
+  margin: 0 0 2px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.index ul { list-style: none; margin: 0; padding: 0; }
+.index li a { display: inline-block; padding: 1px 0; }
+.index .contact { margin-top: 24px; }
+
+/* page header */
+.page-head { display: flex; align-items: flex-end; gap: 28px; flex-wrap: wrap; }
+.page-head .logo img { width: 80px; }
+.page-head h1 {
+  margin: 0;
+  font-size: clamp(26px, 4vw, 34px);
+  line-height: 1.1;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* prev / home / next */
+.pager { display: flex; gap: 22px; margin-top: 10px; font-size: 13px; }
+.pager a { white-space: nowrap; }
+.pager .arrow { letter-spacing: -1px; }
+.pager-bottom { margin-top: 56px; }
+
+/* a single work */
+.work { margin-top: 40px; }
+.work h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent);
+}
+.work .meta { margin: 2px 0 0; font-size: 13px; color: var(--text); }
+.media { margin-top: 18px; }
+.media img, .media video { display: block; max-width: 100%; height: auto; }
+.media img, .media video { max-height: 85vh; width: auto; }
+.media video { background: #111; }
+.embed { position: relative; aspect-ratio: 16 / 9; background: #111; }
+.embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* text pages */
+.prose { margin-top: 40px; max-width: 620px; }
+.prose p { margin: 0 0 1.1em; }
+.prose .sign { color: var(--muted); }
+
+.talks { list-style: none; margin: 40px 0 0; padding: 0; max-width: 620px; }
+.talks li + li { margin-top: 32px; }
+.talks h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.talks h2 a { text-decoration: underline; text-underline-offset: 3px; }
+.talks h2 a:hover { color: var(--text); }
+.talks p { margin: 4px 0 0; font-size: 13px; }
+
+@media (max-width: 520px) {
+  main { padding-top: 32px; }
+  .page-head { gap: 18px; }
+  .page-head .logo img { width: 64px; }
+}
